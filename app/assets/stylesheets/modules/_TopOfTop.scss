@@ -1,0 +1,39 @@
+.top{
+  &__wrapper{
+    &__backs{
+      width: 100%;
+      &__back1{
+        width: 100%;
+        height: 100vh;
+        background-color: #222222	;
+      }
+      &__back2{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+        position: relative;
+        &__effect{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          video{
+            width: 100%;
+            height: 100%;
+          }
+          .title{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            text-align: center;
+            font-size: 100px;
+            color:black;
+            font-weight: bold;
+            font-family: YuMincho;
+          }
+        }
+      }
+    }
+  }
+}
