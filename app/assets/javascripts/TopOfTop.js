@@ -5,7 +5,3 @@ $(function(){
   }
   setTimeout(openSite, 9000)
 });
-
-
-
-
