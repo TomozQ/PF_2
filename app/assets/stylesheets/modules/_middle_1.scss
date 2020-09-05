@@ -49,5 +49,34 @@
         0% {transform: rotate(0deg);}
         100% {transform: rotate(360deg);}
       }
+      &__user{
+        
+        position: absolute;
+        bottom: 500px;
+        right: 50px;
+        &__name{
+          font-size: 30px;
+          border: 6px solid white;
+          width: 200px;
+          text-align: center;
+          cursor: pointer;
+          line-height: 60px;
+          border-radius: 8px;
+          font-family: 'tetsubin';
+          letter-spacing: 1px;
+          font-weight: bold;
+          background: linear-gradient(#141414, #1f1f1f);
+        }
+        a{
+          text-decoration: none;
+          color: white;
+        }
+        a:hover{
+          color: red;
+          font-family: 'onryou';
+          letter-spacing: 3px;
+        }
+      }
     }
+    
 }

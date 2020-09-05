@@ -3,3 +3,7 @@
     = icon('fas', 'ghost', class: 'icon__ghost')
     %a(href="#")
       = icon('fas', 'globe-europe', class: 'icon__globe-europe')
+    .middle_1__wrapper__user
+      .middle_1__wrapper__user__name
+        = link_to user_path(current_user) do
+          = current_user.name

@@ -1,0 +1,21 @@
+.userShow
+  .userShow__account
+    .userShow__account__name
+      = current_user.name
+  %h1
+    編集
+  .userShow__updateForm
+    = form_for(current_user) do |f|
+      .updateFormIn
+        .updateFormIn__Field
+          = f.label :name
+        .updateFormIn__input
+          = f.text_field :name, autofocus: true
+      .updateFormIn
+        .updateFormIn__Field
+          = f.label :email
+        .updateFormIn__input
+          = f.email_field :email
+      = f.submit "Update", class: 'UpdateButton'
+  %a.returnTop(href="/")
+    TOPへ戻る
