@@ -3,10 +3,9 @@
     .userShow__account__name
       = current_user.name
     .userShow__account__image
-      = image_tag src= "#{@user.image}"
+      = image_tag src= "#{current_user.image}"
 
-  %h1
-    編集
+
   .userShow__updateForm
     = form_for(current_user) do |f|
       .updateFormIn

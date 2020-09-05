@@ -57,15 +57,26 @@
         &__name{
           font-size: 30px;
           border: 6px solid white;
-          width: 200px;
+          width: 400px;
           text-align: center;
           cursor: pointer;
-          line-height: 60px;
+          line-height: 100px;
           border-radius: 8px;
           font-family: 'tetsubin';
           letter-spacing: 1px;
           font-weight: bold;
-          background: linear-gradient(#141414, #1f1f1f);
+          background: linear-gradient(#292929, #1f1f1f);
+          padding-left: 20px;
+          img{
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            display: inline-block;
+            position: absolute;
+            left: 40px;
+            top: 16px;
+          }
         }
         a{
           text-decoration: none;

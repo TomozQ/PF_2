@@ -5,5 +5,6 @@
       = icon('fas', 'globe-europe', class: 'icon__globe-europe')
     .middle_1__wrapper__user
       .middle_1__wrapper__user__name
-        = link_to user_path(current_user) do
+        = link_to edit_user_path(current_user) do
+          = image_tag src= "#{current_user.image}"
           = current_user.name
