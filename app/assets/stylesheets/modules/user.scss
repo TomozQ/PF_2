@@ -133,6 +133,15 @@
       font-family: 'tetsubin';
       padding-top: 30px;
     }
+    &__image{
+      text-align: center;
+      img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
   }
   h1{
     color: white;
@@ -142,11 +151,13 @@
     padding-top: 20px;
   }
   &__updateForm{
-    margin: 40px auto;
+    margin-top: 20px;
+    padding-bottom: 40px;
     background: linear-gradient(#141414, #1f1f1f);
     width: 600px;
     text-align: center;
     border-radius: 20px;
+    margin: 0 auto;
     .updateFormIn{
       &__Field{
         color: white;

@@ -12,6 +12,10 @@
 @import "modules/about";
 @import "modules/user";
 
+*::-webkit-scrollbar {
+  display:none;
+}
+
 @font-face{
   font-family: 'ZenjidoJP-FeltPenLMT';
   src: font-url('/fonts/ZenjidoJP-FeltPenLMT.otf');
