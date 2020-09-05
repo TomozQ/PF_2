@@ -142,6 +142,19 @@
         object-fit: cover;
       }
     }
+    &__logout{
+      position: absolute;
+      right: 20px;
+      top: 40px;
+      a{
+        color: white;
+        text-decoration: none;
+        padding: 10px 40px;
+        font-family: 'ZenjidoJP-FeltPenLMT';
+        font-size: 30px;
+        background: linear-gradient(#3b0000, #760000);
+      }
+    }
   }
   h1{
     color: white;
