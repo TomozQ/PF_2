@@ -1,0 +1,94 @@
+@mixin Rows{
+  color: white;
+  font-size: 20px;
+  font-family: 'onryou';
+}
+.about{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  &__wrapper{
+    position: relative;
+    h1{
+      color: white;
+      font-size: 80px;
+      padding-left: 40px;
+      padding-top: 80px;
+      font-weight: bold;
+      font-family: 'ZenjidoJP-FeltPenLMT';
+    }
+    p.row1{
+      @include Rows;
+      padding-left: 10px;
+      span{
+        color: red;
+        font-size: 40px;
+      }
+    }
+    p.row2{
+      @include Rows;
+      padding-left: 40px;
+      margin-top: 10px;
+    }
+    p.row3{
+      @include Rows;
+      padding-left: 40px;
+    }
+    p.row4{
+      @include Rows;
+      padding-left: 10px;
+    }
+    p.row5{
+      @include Rows;
+      padding-left: 10px;
+
+    }
+    p.row6{
+      @include Rows;
+      padding-left: 60px;
+    }
+    p.row7{
+      @include Rows;
+      padding-left: 50px;
+      span{
+        color: red;
+        font-size: 40px;
+      }
+    }
+    p.row8{
+      @include Rows;
+      padding-left: 50px;
+    }
+    p.row9{
+      @include Rows;
+      padding-left: 50px;
+    }
+    p.row10{
+      @include Rows;
+      padding-left: 50px;
+    }
+    p.row11{
+      @include Rows;
+      padding-left: 40px;
+      a{
+        color: red;
+        font-size: 40px;
+        text-decoration: none;
+      }
+    }
+    p.row12{
+      @include Rows;
+      padding-left: 40px;
+    }
+    p.row13{
+      @include Rows;
+      padding-left: 40px;
+    }
+    &__imageBox{
+      position: absolute;
+      bottom: 0;
+      right: 20px;
+      opacity: 0.2;
+    }
+  }
+}
