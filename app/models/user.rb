@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :chitchat_users
+  has_many :chitchats, through: :chitchat_users
+
   validates :name, presence: true, uniqueness: true
 
   mount_uploader :image, ImageUploader
