@@ -1,0 +1,2 @@
+class ChitchatUser < ApplicationRecord
+end
