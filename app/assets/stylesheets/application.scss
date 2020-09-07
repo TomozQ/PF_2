@@ -10,6 +10,11 @@
 @import "modules/middle_4";
 @import "modules/footer";
 @import "modules/about";
+@import "modules/user";
+
+*::-webkit-scrollbar {
+  display:none;
+}
 
 @font-face{
   font-family: 'ZenjidoJP-FeltPenLMT';
@@ -24,4 +29,9 @@
 @font-face{
   font-family: 'onryou';
   src: font-url('/fonts/onryou.TTF');
+}
+
+@font-face{
+  font-family: 'tetsubin';
+  src: font-url('/fonts/tetsubin.otf');
 }

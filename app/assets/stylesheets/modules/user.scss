@@ -1,0 +1,314 @@
+.AccountPage {
+  width: 980px;
+  margin: 60px auto;
+  padding: 60px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.AccountPage__title {
+  width: 50%;
+  font-size: 14px;
+  font-weight: 200;
+
+  h2 {
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-size: 40px;
+    &:after {
+      content: "";
+      display: block;
+      width: 60px;
+      margin-top: 5px;
+      border-bottom: 1px solid #38aef0;
+    }
+  }
+
+  .Button {
+    margin-top: 40px;
+    color: #fff;
+    background-color: #ccc;
+  }
+}
+
+.AccountPage__form {
+  width: 50%;
+}
+
+.FormField {
+  margin-bottom: 10px;
+  &__label--normal {
+    padding: 10px 0;
+    letter-spacing: 1px;
+    font-size: 14px;
+    font-weight: 200;
+    i {
+      font-size: 11px;
+    }
+    .field_with_errors {
+      display: inline-block;
+      color: #d65f4c;
+      font-weight: 400;
+    }
+  }
+  &__input--normal {
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+    .field_with_errors {
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 5px;
+        background-color: #d65f4c;
+      }
+    }
+  }
+}
+
+.Button {
+  display: inline-block;
+  height: 50px;
+  padding: 0 30px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  text-align: center;
+  border: none;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.UserButton {
+  margin-top: 20px;
+  color: #fff;
+  background-color: #38aef0;
+}
+
+#error_explanation {
+  margin: 20px 0;
+  padding: 20px 30px;
+  border: 1px solid #ddd;
+  border-radius: 2px;
+
+  h2 {
+    margin-bottom: 10px;
+    color: #d65f4c;
+    font-size: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 17px;
+    list-style: square;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
+.userNew{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  &__account{
+    color: white;
+    h1{
+      color: white;
+      font-family: 'ZenjidoJP-FeltPenLMT';
+      font-size: 40px;
+      text-align: center;
+      padding-top: 20px;
+    }
+    .login-btn{
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      a{
+        color: white;
+        display: inline-block;
+        background: linear-gradient(#3b0000, #760000);
+        font-size: 30px;
+        font-family: 'ZenjidoJP-FeltPenLMT';
+      }
+    }
+    h5{
+      color: white;
+      font-family: 'ZenjidoJP-FeltPenLMT';
+      font-size: 20px;
+      text-align: center;
+      padding-top: 20px;
+      a{
+        color: white;
+        display: inline-block;
+        background: linear-gradient(#3b0000, #760000);
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        font-size: 30px;
+      }
+    }
+    &__loginForm{
+      margin-top: 20px;
+      padding-bottom: 40px;
+      background: linear-gradient(#141414, #1f1f1f);
+      width: 600px;
+      text-align: center;
+      border-radius: 20px;
+      margin: 0 auto;
+      .loginFormIn{
+        &__Field{
+          color: white;
+          text-align: center;
+          font-family: 'ZenjidoJP-FeltPenLMT';
+          font-size: 26px;
+          margin-top: 20px;
+        }
+        &__input{
+          text-align: center;
+        input{
+          width: 500px;
+          height: 40px;
+          font-size: 26px;
+          margin-top: 10px;
+          background: linear-gradient(#141414, #1f1f1f);
+          border: none;
+          color: white;
+          padding-left: 10px;
+        }
+        input:focus{
+          outline: 0;
+        }
+
+        }
+      }
+      input.LoginButton{
+        width: 150px;
+        height: 50px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: white;
+        background: linear-gradient(#3b0000, #760000);
+        border-radius: 10px;
+        font-family: 'ZenjidoJP-FeltPenLMT';
+        font-size: 30px;
+        box-shadow: black 2px 2px 3px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.userShow{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  &__account{
+    color: white;
+    &__name{
+      display: flex;
+      justify-content: center;
+      font-size: 60px;
+      font-family: 'tetsubin';
+      padding-top: 30px;
+    }
+    &__image{
+      text-align: center;
+      img{
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+    }
+    &__logout{
+      position: absolute;
+      right: 20px;
+      top: 40px;
+      a{
+        color: white;
+        text-decoration: none;
+        padding: 10px 40px;
+        font-family: 'ZenjidoJP-FeltPenLMT';
+        font-size: 30px;
+        background: linear-gradient(#3b0000, #760000);
+      }
+    }
+  }
+  h1{
+    color: white;
+    font-family: 'ZenjidoJP-FeltPenLMT';
+    font-size: 40px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  &__updateForm{
+    margin-top: 20px;
+    padding-bottom: 40px;
+    background: linear-gradient(#141414, #1f1f1f);
+    width: 600px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 0 auto;
+    .updateFormIn{
+      &__Field{
+        color: white;
+        text-align: center;
+        font-family: 'ZenjidoJP-FeltPenLMT';
+        font-size: 26px;
+        margin-top: 20px;
+      }
+      &__input{
+        text-align: center;
+        input{
+          width: 500px;
+          height: 50px;
+          font-size: 26px;
+          margin-top: 10px;
+          background: linear-gradient(#141414, #1f1f1f);
+          border: none;
+          color: white;
+          padding-left: 10px;
+        }
+        input:focus{
+          outline: 0;
+        }
+      }
+    }
+    input.UpdateButton{
+      width: 150px;
+      height: 50px;
+      margin-top: 40px;
+      margin-bottom: 20px;
+      color: white;
+      background: linear-gradient(#3b0000, #760000);
+      border-radius: 10px;
+      font-family: 'ZenjidoJP-FeltPenLMT';
+      font-size: 30px;
+      box-shadow: black 2px 2px 3px;
+      cursor: pointer;
+    }
+  }
+  a.returnTop{
+    text-decoration: none;
+    color: white;
+    font-family: 'ZenjidoJP-FeltPenLMT';
+    font-size: 40px;
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+  }
+}
