@@ -3,7 +3,10 @@
     .userShow__account__name
       = current_user.name
     .userShow__account__image
-      = image_tag src= "#{current_user.image}"
+      -if current_user.image.present?
+        = image_tag src= "#{current_user.image}"
+      -else
+        = image_tag src='ログイン素材.png'
     .userShow__account__logout
       = link_to "ログアウト", destroy_user_session_path, method: :delete
 
