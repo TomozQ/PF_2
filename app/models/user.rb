@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :chitchat_users
-  has_many :chitchats, through: :chitchat_users
+  has_many :gossip_users
+  has_many :gossips, through: :gossip_users
 
   validates :name, presence: true, uniqueness: true
 

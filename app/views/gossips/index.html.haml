@@ -1,0 +1,16 @@
+gossips#index
+= link_to new_gossip_path do
+  gossip作成画面へ
+
+.test
+  ゴシップ一覧
+  -@gossips.each do |gossip|
+    = gossip.name
+.test2
+  自分が作成したゴシップ一覧
+  -current_user.gossips.each do |gossip|
+    = gossip.name
+
+.return
+  =link_to root_path do
+    topReturn
