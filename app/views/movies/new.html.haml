@@ -1,0 +1,14 @@
+movies#new
+= form_with model: @movie, html: {class: "Form"}, local: true do |f|
+  .Form__contents
+    = f.text_field :title, class: 'Form__inputContent', placeholder: 'タイトル'
+    = f.text_area :summary, class: 'Form__inputContent', placeholder: 'あらすじ'
+    = f.text_field :director, class: 'Form__inputContent', placeholder: '監督'
+    = f.text_field :original, class: 'Form__inputContent', placeholder: '原作'
+    = f.text_field :actor, class: 'Form__inputContent', placeholder: '出演'
+    = f.label :image, class: 'Form__inputImage' do
+      = icon('far', 'image', class: 'Form__icon')
+      = f.file_field :image, class: 'Hidden'
+  = f.submit 'Send', class: 'Form__submit'
+= link_to movies_path do
+  moviesIndex

@@ -10,11 +10,14 @@ chats一覧
   .test
     メッセージ投稿内容
     = chat.content
+    = image_tag chat.image.url, class: 'Message__image' if chat.image.present?
   .test
     メッセージ投稿時間
     = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
 
 .return
+  = link_to new_gossip_chat_path(@gossip.id) do
+    投稿する
   = link_to gossips_path do
     returnGossipsIndex
   =link_to root_path do
