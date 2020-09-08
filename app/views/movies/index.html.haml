@@ -1,1 +1,33 @@
 movies#index
+- @movies.each do |movie|
+  .test
+    情報投稿者
+    = movie.user.name
+  .test
+    メッセージ投稿者アイコン
+    = image_tag src= "#{movie.user.image}"
+  .test
+    タイトル
+    = movie.title
+    = image_tag movie.image.url, class: 'Message__image' if movie.image.present?
+  .test
+    投稿日
+    = movie.created_at.strftime("%Y年%m月%d日")
+  .test
+    あらすじ
+    = movie.summary
+  .test
+    監督
+    = movie.director
+  .test
+    原作
+    = movie.original
+  .test
+    出演
+    = movie.actor
+.return
+  =link_to root_path do
+    topReturn
+
+  = link_to new_movie_path do
+    movie追加

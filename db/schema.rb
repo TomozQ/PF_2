@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_132100) do
+ActiveRecord::Schema.define(version: 2020_09_08_141349) do
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_132100) do
     t.string "summary"
     t.string "director"
     t.string "original"
-    t.string "acter"
+    t.string "actor"
     t.string "image"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
