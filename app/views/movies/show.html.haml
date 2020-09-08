@@ -27,3 +27,5 @@ movies#show
 .return
   =link_to root_path do
     topReturn
+  = link_to edit_movie_path(@movie.id) do
+    映画情報を編集

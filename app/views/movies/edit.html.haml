@@ -1,1 +1,39 @@
 movies#edit
+%h1
+  編集
+  .movieShow__updateForm
+    =form_for(@movie) do |f|
+      .updateFormIn
+        .updateFormIn__Field
+          = f.label :title
+        .updateFormIn__input
+          = f.text_field :title, autofocus: true
+
+        .updateFormIn__Field
+          = f.label :summary
+        .updateFormIn__input
+          = f.text_field :summary
+
+        .updateFormIn__Field
+          = f.label :director
+        .updateFormIn__input
+          = f.text_field :director
+
+        .updateFormIn__Field
+          = f.label :original
+        .updateFormIn__input
+          = f.text_field :original
+
+        .updateFormIn__Field
+          = f.label :actor
+        .updateFormIn__input
+          = f.text_field :actor
+
+        .updateFormIn__Field
+          = f.label :image
+        .updateFormIn__input
+          = f.file_field :image
+
+      = f.submit "Update", class: 'UpdateButton'
+
+=link_to '削除', "/movies/#{@movie.id}", method: :delete
