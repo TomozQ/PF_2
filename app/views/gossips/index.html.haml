@@ -5,11 +5,13 @@ gossips#index
 .test
   ゴシップ一覧
   -@gossips.each do |gossip|
-    = gossip.name
+    = link_to gossip_chats_path(gossip.id) do
+      = gossip.name
 .test2
   自分が作成したゴシップ一覧
   -current_user.gossips.each do |gossip|
-    = gossip.name
+    = link_to gossip_chats_path(gossip.id) do
+      = gossip.name
 
 .return
   =link_to root_path do
