@@ -1,0 +1,19 @@
+chats#index
+chats一覧
+- @chats.each do |chat|
+  .test
+    メッセージ投稿者
+    = chat.user.name
+  .test
+    メッセージ投稿者アイコン
+    = image_tag src= "#{chat.user.image}"
+  .test
+    メッセージ投稿内容
+    = chat.content
+  .test
+    メッセージ投稿時間
+    = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
+
+.return
+  =link_to root_path do
+    topReturn

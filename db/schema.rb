@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_075701) do
+ActiveRecord::Schema.define(version: 2020_09_08_092044) do
+
+  create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content"
+    t.string "image"
+    t.bigint "gossip_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["gossip_id"], name: "index_chats_on_gossip_id"
+    t.index ["user_id"], name: "index_chats_on_user_id"
+  end
 
   create_table "gossip_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "gossip_id"
@@ -43,6 +54,8 @@ ActiveRecord::Schema.define(version: 2020_09_08_075701) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chats", "gossips"
+  add_foreign_key "chats", "users"
   add_foreign_key "gossip_users", "gossips"
   add_foreign_key "gossip_users", "users"
 end
