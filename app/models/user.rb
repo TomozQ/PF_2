@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :gossip_users
   has_many :gossips, through: :gossip_users
   has_many :chats
+  has_many :movies
 
   validates :name, presence: true, uniqueness: true
 

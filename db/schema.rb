@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_08_092044) do
+ActiveRecord::Schema.define(version: 2020_09_08_132100) do
 
   create_table "chats", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
@@ -39,6 +39,19 @@ ActiveRecord::Schema.define(version: 2020_09_08_092044) do
     t.index ["name"], name: "index_gossips_on_name", unique: true
   end
 
+  create_table "movies", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.string "summary"
+    t.string "director"
+    t.string "original"
+    t.string "acter"
+    t.string "image"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_movies_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -58,4 +71,5 @@ ActiveRecord::Schema.define(version: 2020_09_08_092044) do
   add_foreign_key "chats", "users"
   add_foreign_key "gossip_users", "gossips"
   add_foreign_key "gossip_users", "users"
+  add_foreign_key "movies", "users"
 end
