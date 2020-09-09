@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :gossips, only: [:new, :create, :index] do
     resources :chats, only: [:index, :create, :new]
   end
-  resources :movies
+  resources :movies do
+    resources :comments, only: :create
+  end
 end
