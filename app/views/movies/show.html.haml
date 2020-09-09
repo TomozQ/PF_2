@@ -24,6 +24,20 @@ movies#show
 .test
   出演
   = @movie.actor
+
+- if current_user
+  =form_with(model: [@movie, @comment], local: true) do |f|
+    = f.text_area :text, placeholder: 'コメントする', rows: '2'
+    = f.submit 'comment'
+- else
+  コメントの投稿には新規登録/ログインが必要です。
+
+- @comments.each do |comment|
+  =comment.user.name
+  =image_tag src="#{comment.user.image}"
+  =comment.text
+  =comment.created_at.strftime("%Y年%m月%d日")
+
 .return
   =link_to root_path do
     topReturn
