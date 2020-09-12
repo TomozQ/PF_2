@@ -1,18 +1,33 @@
-gossips#index
-= link_to new_gossip_path do
-  gossip作成画面へ
-
-.test
-  ゴシップ一覧
-  -@gossips.each do |gossip|
-    = link_to gossip_chats_path(gossip.id) do
-      = gossip.name
-.test2
-  自分が作成したゴシップ一覧
-  -current_user.gossips.each do |gossip|
-    = link_to gossip_chats_path(gossip.id) do
-      = gossip.name
-
-.return
-  =link_to root_path do
-    topReturn
+.gossip_index
+  .gossip_index__title
+    %h1
+      Gossip一覧
+    .gossip_index__title__return
+      =link_to root_path do
+        Home
+  .gossip_index__link
+    = link_to new_gossip_path do
+      gossip作成
+  .gossip_index__wrapper
+    .gossip_index__wrapper__side
+      .gossip_index__wrapper__side__title
+        My Gossips
+      .gossip_index__wrapper__side__contents
+        -current_user.gossips.each do |gossip|
+          .gossip_index__wrapper__side__contents__content
+            .gossip_index__wrapper__side__contents__content__name
+              = link_to gossip_chats_path(gossip.id) do
+                = gossip.name
+            .gossip_index__wrapper__side__contents__content__time
+              = gossip.created_at.strftime("%Y年%m月%d日 %H時%M分")
+    .gossip_index__wrapper__main
+      .gossip_index__wrapper__main__title
+        Social Gossips
+      .gossip_index__wrapper__main__contents
+        -@gossips.each do |gossip|
+          .gossip_index__wrapper__main__contents__content
+            .gossip_index__wrapper__main__contents__content__name
+              = link_to gossip_chats_path(gossip.id) do
+                = gossip.name
+            .gossip_index__wrapper__main__contents__content__time
+              = gossip.created_at.strftime("%Y年%m月%d日 %H時%M分")
