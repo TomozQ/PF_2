@@ -16,16 +16,15 @@ $(function(){
   directions = new google.maps.DirectionsService();
   // Google Mapで利用する初期設定用の変数
   var mapOptions = {
-      zoom: 17,
+      zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      center: new google.maps.LatLng(36.062092, 136.223323)
+      center: new google.maps.LatLng(35.666674, 138.568785)
   };
   // GoogleMapの生成
   map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
   // [検索]ボタン処理
   $('#searchBtn').click(function(searchRoute){
-    console.log('hoge')
   // テキストボックスから検索の出発・到着を取得
   var origin = document.getElementById("origin").value;
   var destination = document.getElementById("destination").value;
@@ -34,7 +33,7 @@ $(function(){
       { // ルート リクエスト
         'origin'     : origin,     //出発地点
         'destination': destination,//到着地点
-        'travelMode' : google.maps.DirectionsTravelMode.WALKING //ルートタイプ:徒歩
+        'travelMode' : google.maps.DirectionsTravelMode.DRIVING //ルートタイプ:車
       },
       function(results, status) { // ルート結果callback関数
         if (status == ds.OK) {  // 結果がOK ??
@@ -43,7 +42,7 @@ $(function(){
             map: map,              //マップ
             path: results.routes[0].overview_path,//ポリラインの座標の列
             strokeWeight: 5,       //ストローク幅(ピクセル単位)
-            strokeColor: "#f01010",//16進数形式のストロークの色
+            strokeColor: "#33CCFF",//16進数形式のストロークの色
             strokeOpacity: 0.5     //ストロークの不透明度(0.0～1.0)
           });
           // 検索結果の中心設定
@@ -54,7 +53,4 @@ $(function(){
         }
       });
     })
-  // function searchRoute() {
-    
-  // }
 });
