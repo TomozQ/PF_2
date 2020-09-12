@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :movies do
     resources :comments, only: :create
   end
+  get 'searchs', to: 'searchs#map'
 end
