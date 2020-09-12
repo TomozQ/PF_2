@@ -42,7 +42,7 @@ $(function(){
             map: map,              //マップ
             path: results.routes[0].overview_path,//ポリラインの座標の列
             strokeWeight: 5,       //ストローク幅(ピクセル単位)
-            strokeColor: "#33CCFF",//16進数形式のストロークの色
+            strokeColor: "#0000EE",//16進数形式のストロークの色
             strokeOpacity: 0.5     //ストロークの不透明度(0.0～1.0)
           });
           // 検索結果の中心設定
