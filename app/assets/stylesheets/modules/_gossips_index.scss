@@ -1,0 +1,153 @@
+.gossip_index{
+  width: 100vw;
+  height: 100vh;
+  &__title{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    h1{
+      font-family: 'tetsubin';
+      font-size: 30px;
+      padding-left: 40px;
+    }
+    &__return{
+      position: absolute;
+      right: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+  &__link{
+    position: absolute;
+    bottom: 60px;
+    right: 30px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background:linear-gradient(#3b0000, #760000);
+    box-shadow: 1px 1px 1px;
+    cursor: pointer;
+    padding: 0.75em 2em;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border: 2px solid black;
+    font-size: 24px;
+    display: inline-block;
+    transition: all 0.2s ease-in-out;
+    overflow: hidden;
+    &:before {
+      content: "";
+      background-color: rgba(255,255,255,0.5);
+      height: 100%;
+      width: 3em;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -4.5em;
+      transform: skewX(-45deg) translateX(0);
+      transition: none;
+    }
+    &:hover {
+      background-color: black;
+      color: #fff;
+      border-bottom: 4px solid darken(black, 10%);
+      &:before {
+        transform: skewX(-45deg) translateX(13.5em);
+      transition: all 0.5s ease-in-out;
+      }
+    }
+    a{
+      text-decoration: none;
+      color: white;
+      font-family: 'tetsubin';
+      margin-left: -14px;
+      margin-top: 30px;
+      display: inline-block;
+    }
+  }
+  &__wrapper{
+    width: 100%;
+    display: flex;
+    &__side{
+      width: 400px;
+      height: calc(100vh - 100px);
+      background: linear-gradient(#b1b1b1, #f6f6f6);
+      &__title{
+        font-family: 'tetsubin';
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 30px;
+      }
+      &__contents{
+        padding-top: 20px;
+        padding-left: 20px;
+        width: 350px;
+        overflow: scroll;
+        &__content{
+          border-top: 1px solid #a7a7a7;
+          border-bottom: 1px solid #a7a7a7;
+          padding-top: 10px;
+          &__name{
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 20px;
+              font-family: Yumincho;
+            }
+          }
+          &__time{
+            font-size: 14px;
+            padding-left: 10px;
+          }
+        }
+        &__content + &__content{
+          border-top: none;
+        }
+      }
+    }
+    &__main{
+      width: calc(100% - 400px);
+      height: calc(100vh - 100px);
+      background: linear-gradient(#e2e2e2, #ffffff);
+      &__title{
+        font-family: 'tetsubin';
+        margin-top: 10px;
+        margin-left: 20px;
+        font-size: 30px;
+      }
+      &__contents{
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        overflow: scroll;
+        &__content{
+          border-top: 1px solid #a7a7a7;
+          border-bottom: 1px solid #a7a7a7;
+          padding-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          &__name{
+            a{
+              text-decoration: none;
+              color: black;
+              font-size: 20px;
+              font-family: Yumincho;
+            }
+          }
+          &__time{
+            font-size: 12px;
+          }
+        }
+        &__content + &__content{
+          border-top: none;
+        }
+      }
+    }
+  }
+}
