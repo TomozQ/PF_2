@@ -1,0 +1,78 @@
+.gossip_new{
+  width: 100vw;
+  height: 100vh;
+  &__title{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    h1{
+      font-family: 'tetsubin';
+      font-size: 30px;
+      padding-left: 40px;
+    }
+    &__return{
+      position: absolute;
+      right: 40px;
+      a{
+        text-decoration: none;
+        color: white;
+        padding-left: 10px;
+      }
+    }
+  }
+  &__wrapper{
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-image: image-url('3233510_s.jpg');
+    background-size: cover;
+    &__effect{
+      width: 100%;
+      height: calc(100vh - 100px);
+      background-color: rgba(255, 255, 255, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__form{
+        width: 600px;
+        height: 200px;
+        background:linear-gradient(#0a0a0a, #323232);
+        border-radius: 6px;
+        box-shadow: 1px 1px 3px 2px;
+        display: flex;
+        justify-content: center;
+        .GossipForm_input{
+          margin-top: 30px;
+          input{
+            width: 350px;
+            height: 40px;
+          }
+          input:focus{
+            outline: none;
+          }
+        }
+        .GossipForm_check{
+          color: white;
+          font-size: 20px;
+          margin-top: 10px;
+        }
+        .GossipForm_btn{
+          text-align: center;
+          margin-top: 30px;
+          input{
+            width: 100px;
+            height: 40px;
+            font-family: 'onryou';
+            font-size: 20px;
+            letter-spacing: 2px;
+            color: white;
+            background: linear-gradient(#3b0000, #760000);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
