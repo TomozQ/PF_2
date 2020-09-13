@@ -1,24 +1,32 @@
-chats#index
-chats一覧
-- @chats.each do |chat|
-  .test
-    メッセージ投稿者
-    = chat.user.name
-  .test
-    メッセージ投稿者アイコン
-    = image_tag src= "#{chat.user.image}"
-  .test
-    メッセージ投稿内容
-    = chat.content
-    = image_tag chat.image.url, class: 'Message__image' if chat.image.present?
-  .test
-    メッセージ投稿時間
-    = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
-
-.return
-  = link_to new_gossip_chat_path(@gossip.id) do
-    投稿する
-  = link_to gossips_path do
-    returnGossipsIndex
-  =link_to root_path do
-    topReturn
+.chat_index
+  .chat_index__title
+    = @gossip.name
+    .chat_index__title__links
+      =link_to root_path do
+        Home
+      = link_to gossips_path do
+        Gossips一覧
+  .chat_index__wrapper
+    .chat_index__wrapper__contents
+      - @chats.each do |chat|
+        .chat
+          .chat__in
+            .chat__in__left
+              .chat__in__left__userIcon
+                = image_tag src= "#{chat.user.image}"
+            .chat__in__right
+              .chat__in__right__top
+                .chat__in__right__top__userName
+                  = chat.user.name
+                .chat__in__right__top__createdTime
+                  = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
+              .chat__in__right__bottom
+                .chat__in__right__bottom__content
+                  = chat.content
+                  = image_tag chat.image.url, class: 'Message__image' if chat.image.present?
+  .chat_index__btn
+    = link_to new_gossip_chat_path(@gossip.id)  do
+      .chat_index__btn__left
+        =@nums
+      .chat_index__btn__right
+        投稿する
