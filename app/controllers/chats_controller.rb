@@ -4,6 +4,7 @@ class ChatsController < ApplicationController
   def index
     @chat = Chat.new
     @chats = @gossip.chats.includes(:user)
+    @nums = @gossip.chats.count
   end
 
   def new
