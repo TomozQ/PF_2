@@ -1,45 +1,67 @@
-movies#show
-.test
-  情報投稿者
-  = @movie.user.name
-.test
-  メッセージ投稿者アイコン
-  = image_tag src= "#{@movie.user.image}", size: '100x100'
-.test
-  タイトル
-  = @movie.title
-  = image_tag @movie.image.url, class: 'Message__image' if @movie.image.present?
-.test
-  投稿日
-  = @movie.created_at.strftime("%Y年%m月%d日")
-.test
-  あらすじ
-  = @movie.summary
-.test
-  監督
-  = @movie.director
-.test
-  原作
-  = @movie.original
-.test
-  出演
-  = @movie.actor
+.movie_show
+  .movie_show__title
+    映画情報詳細
+    .movie_show__title__return
+      =link_to root_path do
+        Home
+      = link_to movies_path do
+        映画一覧
+      = link_to edit_movie_path(@movie.id) do
+        映画情報を編集
+  .movie_show__wrapper
+    .movie_show__wrapper__contents
+      .movie_show__wrapper__contents__title
+        = @movie.title
+      .movie_show__wrapper__contents__image
+        = image_tag @movie.image.url, class: 'Message__image' if @movie.image.present?
+      .movie_show__wrapper__contents__summary
+        %p
+          あらすじ
+        = @movie.summary
+      .movie_show__wrapper__contents__content
+        %p
+          監督
+        = @movie.director
+      .movie_show__wrapper__contents__content
+        %p
+          原作
+        = @movie.original
+      .movie_show__wrapper__contents__content
+        %p
+          主演
+        = @movie.actor
+  .movie_show__userInfo
+    .movie_show__userInfo__top
+      %p
+        情報投稿者
+    .movie_show__userInfo__bottom
+      = image_tag src= "#{@movie.user.image}", size: '100x100'
+      %p
+        = @movie.user.name
+    %p.time
+      投稿日
+      = @movie.created_at.strftime("%Y年%m月%d日")
+  .movie_show__comwrapper
+    .movie_show__comwrapper__contents
+      %p
+        コメント
+      - @comments.each do |comment|
+        .movie_show__comwrapper__contents__box
+          .movie_show__comwrapper__contents__box__top
+            .movie_show__comwrapper__contents__box__top__userImage
+              =image_tag src="#{comment.user.image}"
+            .movie_show__comwrapper__contents__box__top__userName
+              =comment.user.name
+          .movie_show__comwrapper__contents__box__bottom
+            .movie_show__comwrapper__contents__box__bottom__text
+              =comment.text
+            .movie_show__comwrapper__contents__box__bottom__time
+              =comment.created_at.strftime("%Y年%m月%d日")
 
-- if current_user
-  =form_with(model: [@movie, @comment], local: true) do |f|
-    = f.text_area :text, placeholder: 'コメントする', rows: '2'
-    = f.submit 'comment'
-- else
-  コメントの投稿には新規登録/ログインが必要です。
-
-- @comments.each do |comment|
-  =comment.user.name
-  =image_tag src="#{comment.user.image}", size: '100x100'
-  =comment.text
-  =comment.created_at.strftime("%Y年%m月%d日")
-
-.return
-  =link_to root_path do
-    topReturn
-  = link_to edit_movie_path(@movie.id) do
-    映画情報を編集
+  .movie_show__comForm
+    - if current_user
+      =form_with(model: [@movie, @comment], local: true) do |f|
+        = f.text_area :text, placeholder: 'コメントする', rows: '2'
+        = f.submit 'comment'
+    - else
+      コメントの投稿には新規登録/ログインが必要です。
