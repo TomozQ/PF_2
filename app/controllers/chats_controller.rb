@@ -9,6 +9,7 @@ class ChatsController < ApplicationController
 
   def new
     @chat = Chat.new
+    @chats = @gossip.chats.includes(:user)
   end
 
   def create
