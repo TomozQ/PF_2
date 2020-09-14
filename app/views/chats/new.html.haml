@@ -1,14 +1,44 @@
-chats#new
-チャット作成画面
-.Footer
-  = form_with model: [@gossip, @chat], html: {class: "Form"}, local: true do |f|
-    .Form__contents
-      = f.text_field :content, class: 'Form__inputContent', placeholder: 'type a message'
-      = f.label :image, class: 'Form__inputImage' do
-        = icon('far', 'image', class: 'Form__icon')
-        = f.file_field :image, class: 'Hidden'
-    = f.submit 'Send', class: 'Form__submit'
-
-.return
-  =link_to root_path do
-    topReturn
+.chat_new
+  .chat_new__title
+    = @gossip.name
+    .chat_new__title__links
+      =link_to root_path do
+        Home
+      = link_to gossip_chats_path(@gossip.id) do
+        Chat一覧
+  .chat_new__wrapper
+    .chat_new__wrapper__chatsIndex
+      - @chats.each do |chat|
+        .chat
+          .chat__in
+            .chat__in__left
+              .chat__in__left__userIcon
+                = image_tag src= "#{chat.user.image}"
+            .chat__in__right
+              .chat__in__right__top
+                .chat__in__right__top__userName
+                  = chat.user.name
+                .chat__in__right__top__createdTime
+                  = chat.created_at.strftime("%Y年%m月%d日 %H時%M分")
+              .chat__in__right__bottom
+                .chat__in__right__bottom__content
+                  = chat.content
+                  = image_tag chat.image.url, class: 'Message__image' if chat.image.present?
+    .chat_new__wrapper__contents
+      %p
+        メッセージ作成
+      .chat_new__wrapper__contents__user
+        %p
+          %span 
+            作成者
+          = current_user.name
+      .chat_new__wrapper__contents__form
+        = form_with model: [@gossip, @chat], html: {class: "Form"}, local: true do |f|
+          .formContents
+            = f.text_area :content, class: 'Form__inputContent', placeholder: 'type a message'
+            = f.label :image, class: 'Form__inputImage' do
+              = icon('far', 'image', class: 'Form__icon')
+              = f.file_field :image, class: 'Hidden'
+          .formBtn
+            = f.submit 'Chat', class: 'Form__submit'
+            = icon('fas', 'hand-point-left')

@@ -1,4 +1,4 @@
-.chat_index{
+.chat_new{
   width: 100vw;
   height: 100vh;
   position: relative;
@@ -25,14 +25,9 @@
   &__wrapper{
     width: 100%;
     height: calc(100vh - 100px);
-    background-color: #cecece;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    &__contents{
-      height: 98%;
-      width: 1000px;
-      background-color: #e2e2e2;
+    &__chatsIndex{
+      width: 50%;
       overflow: scroll;
       .chat{
         width: 100%;
@@ -81,35 +76,67 @@
         }
       }
     }
-  }
-  &__btn{
-    width: 200px;
-    display: flex;
-    background: linear-gradient(#3b0000, #760000);
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    box-shadow: 2px 2px 3px 2px;
-    border-radius: 50%;
-    a{
-      text-decoration: none;
-      display: block;
-      line-height: 200px;
-      color: white;
-      font-family: 'onryou';
-    }
-    &__left{
-      height: 80%;
-      display: inline-block;
-      margin-left: 20px;
-      padding-right: 20px;
-      border-right: 1px solid white;
-      font-size: 30px;
-    }
-    &__right{
-      display: inline-block;
-      font-size: 30px;
-      margin-left: 10px;
+    &__contents{
+      width: 50%;
+      height: 100%;
+      p{
+        font-size: 30px;
+        font-family: 'tetsubin';
+        padding: 20px;
+      }
+      &__user{
+        span{
+          font-size: 20px;
+        }
+        p{
+          font-family: Arial, Helvetica, sans-serif;
+        }
+      }
+      &__form{
+        padding-left: 40px;
+        textarea.Form__inputContent{
+          width: 600px;
+          height: 400px;
+          padding-left: 10px;
+          padding-right: 10px;
+          border: 2px solid gray;
+          border-radius: 10px;
+        }
+        textarea.Form__inputContent:focus{
+          outline: none;
+        }
+        label{
+          display: block;
+          position: relative;
+          i{
+            display: inline-block;
+            position: absolute;
+            font-size: 50px;
+            cursor: pointer;
+            right: 100px;
+            top: -70px;
+          }
+        }
+        .Hidden{
+          display: none;
+        }
+        .formBtn{
+          position: relative;
+          input.Form__submit{
+            margin-top: 40px;
+            font-size: 40px;
+            width: 300px;
+            padding-left: 30px;
+          }
+          i{
+            position: absolute;
+            left: 40px;
+            top: 50px;
+            font-size: 40px;
+            display: inline-block;
+          }
+        }
+      }
     }
   }
 }
