@@ -1,16 +1,22 @@
-movies#index
-- @movies.each do |movie|
-  .test
-    タイトル
-    = link_to movie_path(movie.id) do
-      = movie.title
-    = image_tag movie.image.url, class: 'Message__image' if movie.image.present?
-  .test
-    投稿日
-    = movie.created_at.strftime("%Y年%m月%d日")
-.return
-  =link_to root_path do
-    topReturn
-
-  = link_to new_movie_path do
-    movie追加
+.movie_index
+  .movie_index__title
+    映画紹介
+    .movie_index__title__return
+      =link_to root_path do
+        Home
+  .movie_index__wrapper
+    .movie_index__wrapper__contents
+      - @movies.each do |movie|
+        .movie_index__wrapper__contents__content
+          .movie_index__wrapper__contents__content__image
+            = image_tag movie.image.url, class: 'Message__image' if movie.image.present?
+          .movie_index__wrapper__contents__content__title
+            = link_to movie_path(movie.id) do
+              = movie.title
+          .movie_index__wrapper__contents__content__time
+            %p
+              投稿日
+            = movie.created_at.strftime("%Y年%m月%d日")
+  .movie_index__link
+    = link_to new_movie_path do
+      movie追加

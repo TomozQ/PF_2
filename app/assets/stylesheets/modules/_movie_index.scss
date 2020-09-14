@@ -1,0 +1,79 @@
+.movie_index{
+  width: 100vw;
+  height: 100vh;
+  &__title{
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    color: white;
+    font-size: 40px;
+    font-family: 'tetsubin';
+    padding-top: 40px;
+    padding-left: 40px;
+    position: relative;
+    &__return{
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      a{
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    }
+  }
+  &__wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__contents{
+      width: 95%;
+      display: flex;
+      flex-wrap: wrap;
+      &__content{
+        padding: 30px;
+        &__image{
+          img{
+            width: 250px;
+            height: 300px;
+          }
+        }
+        &__title{
+          a{
+            color: #0000d8;
+            text-decoration: none;
+            font-size: 20px;
+          }
+        }
+        &__time{
+          font-size: 12px;
+          padding-top: 10px;
+          p{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+  &__link{
+    width: 100px;
+    display: flex;
+    background: linear-gradient(#3b0000, #760000);
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    box-shadow: 2px 2px 3px 2px;
+    border-radius: 50%;
+    position: fixed;
+    a{
+      text-decoration: none;
+      display: block;
+      line-height: 100px;
+      color: white;
+      font-family: 'onryou';
+      font-size: 20px;
+      padding-left: 8px;
+    }
+  }
+}
