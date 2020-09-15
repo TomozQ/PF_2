@@ -1,39 +1,45 @@
-movies#edit
-%h1
-  編集
-  .movieShow__updateForm
-    =form_for(@movie) do |f|
-      .updateFormIn
-        .updateFormIn__Field
-          = f.label :title
-        .updateFormIn__input
-          = f.text_field :title, autofocus: true
+.movie_new
+  .movie_new__title
+    映画情報編集
+    .movie_new__title__return
+      =link_to root_path do
+        Home
+      = link_to movies_path do
+        MovieIndex
+  .movie_new__wrapper
+    .movie_new__wrapper__contents
+      .movie_new__wrapper__contents__form
+        =form_for(@movie) do |f|
+          .Form__contents
+            %h1
+              映画情報を入力
+            .Form__contents__title
+              %p
+                タイトルを入力
+              = f.text_field :title, class: 'Form__inputContent', placeholder: 'タイトル'
+            .Form__contents__summary
+              %p
+                あらすじを入力
+              = f.text_area :summary, class: 'Form__textareaContent', placeholder: 'あらすじ'
+            .Form__contents__director
+              %p
+                監督を入力
+              = f.text_field :director, class: 'Form__inputContent', placeholder: '監督'
+            .Form__contents__original
+              %p
+                原作者を入力
+              = f.text_field :original, class: 'Form__inputContent', placeholder: '原作'
+            .Form__contents__actor
+              %p
+                主演を入力
+              = f.text_field :actor, class: 'Form__inputContent', placeholder: '主演'
+            .Form__contents__image
+              %p
+                画像を選択
+              = f.label :image, class: 'Form__inputImage' do
+                = icon('far', 'image', class: 'Form__icon')
+                = f.file_field :image, class: 'Hidden'
+            .Form__contents__submit
+              = f.submit '変更を更新', class: 'Form__submit'
+              =link_to '削除', "/movies/#{@movie.id}", method: :delete
 
-        .updateFormIn__Field
-          = f.label :summary
-        .updateFormIn__input
-          = f.text_field :summary
-
-        .updateFormIn__Field
-          = f.label :director
-        .updateFormIn__input
-          = f.text_field :director
-
-        .updateFormIn__Field
-          = f.label :original
-        .updateFormIn__input
-          = f.text_field :original
-
-        .updateFormIn__Field
-          = f.label :actor
-        .updateFormIn__input
-          = f.text_field :actor
-
-        .updateFormIn__Field
-          = f.label :image
-        .updateFormIn__input
-          = f.file_field :image
-
-      = f.submit "Update", class: 'UpdateButton'
-
-=link_to '削除', "/movies/#{@movie.id}", method: :delete
