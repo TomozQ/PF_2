@@ -1,10 +1,24 @@
-.map#map{style: "width: 900px; height: 800px;"}
-%input#origin{type: 'textbox', value: '甲府駅(山梨)'}
-%br
-%input#destination{type: 'textbox', value: '山梨市駅（山梨）'}
-%br
-%input#searchBtn{type: 'button', value: '検索'}
+.search
+  .search__wrapper
+    .search__wrapper__title
+      %h1
+        経路検索
+      .search__wrapper__title__return
+        =link_to root_path do
+          Home
+    .search__wrapper__contents
+      .search__wrapper__contents__origin
+        %p
+          出発地
+        %input#origin{type: 'textbox', value: '甲府駅(山梨)'}
+      .search__wrapper__contents__destination
+        %p
+          目的地
+        %input#destination{type: 'textbox', value: '山梨市駅（山梨）'}
+      .search__wrapper__contents__btn
+        %input#searchBtn{type: 'button', value: '検索'}
+    .map#map{style: "width: 100%; height: 600px;"}
+      
 
 .return
-  =link_to root_path do
-    topReturn
+  
