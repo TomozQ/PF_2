@@ -44,7 +44,7 @@
   .movie_show__comwrapper
     .movie_show__comwrapper__contents
       %p
-        コメント
+        みんなの声
       - @comments.each do |comment|
         .movie_show__comwrapper__contents__box
           .movie_show__comwrapper__contents__box__top
@@ -59,9 +59,14 @@
               =comment.created_at.strftime("%Y年%m月%d日")
 
   .movie_show__comForm
-    - if current_user
-      =form_with(model: [@movie, @comment], local: true) do |f|
-        = f.text_area :text, placeholder: 'コメントする', rows: '2'
-        = f.submit 'comment'
-    - else
-      コメントの投稿には新規登録/ログインが必要です。
+    .movie_show__comForm__wrapper
+      %p
+        みんなの声に投稿する
+      .movie_show__comForm__wrapper__contents
+        - if current_user
+          =form_with(model: [@movie, @comment], local: true) do |f|
+            = f.text_area :text, placeholder: 'あなたの声', rows: '10'
+            .comForm_submit
+              = f.submit '投稿'
+        - else
+          コメントの投稿には新規登録/ログインが必要です。
