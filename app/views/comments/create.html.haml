@@ -1,4 +1,12 @@
-commentを投稿しました。
-.return
-  =link_to root_path do
-    topReturn
+.comment_show
+  .comment_show__wrapper
+    .comment_show__wrapper__head
+      あなたの声を投稿しました
+    .comment_show__wrapper__links
+      .comment_show__wrapper__links__top
+        =link_to root_path do
+          Topへ戻る
+      .comment_show__wrapper__links__show
+        =link_to movie_path(params[:movie_id]) do
+          映画詳細へ
+  
