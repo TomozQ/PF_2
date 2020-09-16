@@ -15,11 +15,13 @@ class ChatsController < ApplicationController
   def create
     @chat = @gossip.chats.new(chat_params)
     if @chat.save
-      redirect_to gossip_chats_path(@gossip), notice: 'chatが送信されました'
+      respond_to do |format|
+        format.json
+      end
     else
       @chats = @gossip.chats.includes(:user)
       flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
+      render :new
     end
   end
 
