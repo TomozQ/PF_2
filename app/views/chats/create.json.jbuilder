@@ -4,3 +4,4 @@ json.content @chat.content
 json.image @chat.image_url
 json.user_id @chat.user.id
 json.user_image_url @chat.user.image_url
+json.id @chat.id

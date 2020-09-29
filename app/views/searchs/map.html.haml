@@ -1,3 +1,5 @@
+%script{src: "http://maps.google.com/maps/api/js?key=#{ENV['GOOGLE_MAP_API_KEY']}", charset: 'utf-8'}
+= javascript_include_tag 'search'
 .search
   .search__wrapper
     .search__wrapper__title
@@ -18,7 +20,4 @@
       .search__wrapper__contents__btn
         %input#searchBtn{type: 'button', value: '検索'}
     .map#map{style: "width: 100%; height: 600px;"}
-      
-
-.return
   

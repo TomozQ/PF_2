@@ -1,3 +1,4 @@
+= javascript_include_tag 'autoReload'
 .chat_new
   .chat_new__title
     = @gossip.name
@@ -9,7 +10,7 @@
   .chat_new__wrapper
     .chat_new__wrapper__chatsIndex
       - @chats.each do |chat|
-        .chat
+        .chat{data: {chat: {id: chat.id}}}
           .chat__in
             .chat__in__left
               .chat__in__left__userIcon
