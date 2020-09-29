@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(chat){
     if ( chat.image ) {
       let html =
-        `<div class="chat">
+        `<div class="chat" data-chat-id=${chat.id}>
           <div class="chat__in">
             <div class="chat__in__left">
               <div class="chat__in__left__userIcon">
@@ -30,30 +30,30 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="chat">
-      <div class="chat__in">
-        <div class="chat__in__left">
-          <div class="chat__in__left__userIcon">
-          <img src="${chat.user_image_url}">
+      `<div class="chat" data-chat-id=${chat.id}>
+        <div class="chat__in">
+          <div class="chat__in__left">
+            <div class="chat__in__left__userIcon">
+              <img src="${chat.user_image_url}">
+            </div>
+          </div>
+          <div class="chat__in__right">
+            <div class="chat__in__right__top">
+              <div class="chat__in__right__top__userName">
+                ${chat.user_name}
+              </div>
+              <div class="chat__in__right__top__createdTime">
+                ${chat.created_at}
+              </div>
+            </div>
+            <div class="chat__in__right__bottom">
+              <div class="chat__in__right__bottom__content">
+                ${chat.content}
+              </div>
+            </div>
           </div>
         </div>
-        <div class="chat__in__right">
-          <div class="chat__in__right__top">
-            <div class="chat__in__right__top__userName">
-              ${chat.user_name}
-            </div>
-            <div class="chat__in__right__top__createdTime">
-              ${chat.created_at}
-            </div>
-          </div>
-          <div class="chat__in__right__bottom">
-            <div class="chat__in__right__bottom__content">
-              ${chat.content}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>`
+      </div>`
       return html;
     };
   }
