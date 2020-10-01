@@ -22,17 +22,17 @@
 
 ### 作成された掲示板一覧が表示されます
 <p align="center">
-  <img src="/public/README-images/スクリーンショット 2020-09-30 13.21.34.png" width=80%>
+  <img src="/public/README-images/スクリーンショット 2020-10-01 12.28.12.png" width=80%>
 </p>
 
 ### 掲示板の投稿内容を見れます（ROM専）
 <p align="center">
-  <img src="/public/README-images/スクリーンショット 2020-09-30 13.21.40.png" width=80%>
+  <img src="/public/README-images/スクリーンショット 2020-10-01 12.28.21.png" width=80%>
 </p>
 
-### 掲示板の投稿内容を見ることができ、積極的な意見・質問の投稿ができます
+### 掲示板の投稿内容を見ることができ、積極的な、意見・質問の投稿ができます
 <p align="center">
-  <img src="/public/README-images/スクリーンショット 2020-09-30 13.21.47.png" width=80%>
+  <img src="/public/README-images/スクリーンショット 2020-10-01 12.28.28.png" width=80%>
 </p>
 
 ### ユーザー情報（名前・メールアドレス・画像）の編集ができます
