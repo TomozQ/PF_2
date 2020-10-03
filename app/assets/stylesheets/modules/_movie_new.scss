@@ -1,9 +1,9 @@
 @mixin Form {
-  padding-bottom: 20px;
+  padding-bottom: 60px;
   margin-left: 30px;
   input{
     width: 300px;
-    height: 40px;
+    height: 50px;
     padding-left: 10px;
   }
 }
@@ -66,10 +66,10 @@
             @include Form;
           }
           &__summary{
-            padding-bottom: 20px;
+            padding-bottom: 30px;
             margin-left: 30px;
             textarea{
-              width: 600px;
+              width: 90%;
               height: 200px;
               padding: 10px;
               
